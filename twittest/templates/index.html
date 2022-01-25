@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content%}
+{% if current_user.is_authenticated %}
+<div style="min-width: 500px;" class="container mt-5 mb-5 card w-25 ">
+  <div class=" text-center  mb-3" >
+      <div class="row g-0">
+        
+        <div class="">
+          <div class="card-body">
+            <img src="{{url_for('static',filename='profile_pics/'+ current_user.profile_img)}}" style="width: 100px;" class="rounded-circle p-2 img-fluid" alt="...">
+            <h5 class="card-title">Welcome back {{current_user}} </h5>
+          </div>
+        </div>
+      </div>
+    </div> 
+</div>
+<div>
+  {% for p in post %}
+  <div style="min-width: 500px;" class="container w-25 mt-5">
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <img src="{{url_for('static',filename='profile_pics/'+ user.profile_img)}}" style="width: 45px;" class="rounded-circle img-fluid" alt="...">
+        {{user.username}}
+      </div>
+               
+        <div class="card-body">
+          <h5 class="card-title">{{p.title}}</h5>
+          <p class="card-text">{{p.text}}</p>
+        </div>
+     
+   
+      </div>
+
+</div>
+{% endfor %}
+
+
+
+
+
+{% else %}
+<div style="min-width: 500px;" class="container mt-5 mb-5 card w-25 position-absolute top-50 start-50 translate-middle p-5">
+  <div class=" text-center  mb-3" >
+      <div class="row g-0">
+        
+        <div class="">
+          <div class="card-body">
+            <h5 class="card-title">Wellcome to twittest please login or register </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+{% endblock %}

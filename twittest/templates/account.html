@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div style="min-width: 500px;" class="container mt-5 mb-5 card w-25 ">
+    <div class=" text-center  mb-3" >
+        <div class="row g-0">
+          <div class="">
+            
+            <img src="{{url_for('static',filename='profile_pics/'+ current_user.profile_img)}}" style="width: 100px;" class="rounded-circle p-2 img-fluid" alt="...">
+          </div>
+          <div class="">
+            <div class="card-body">
+              <h5 class="card-title">{{current_user.username}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+</div>
+
+<div style="min-width: 500px;" class="container  w-25 card  position-absolute top-50 start-50 translate-middle p-5">
+    <h4 class="card-title pb-3">update your account</h4>
+<form method="POST" action="" enctype="multipart/form-data" >
+
+{{ form.hidden_tag()}}
+{{form.username (class="form-control" )}}<br>
+
+{{form.email (class="form-control" )}} <br>
+{{form.picture (class="form-control" )}}<br>
+
+{{form.submit (class="btn btn-primary w-100" )}}
+
+</form>
+</div>
+{%endblock%}

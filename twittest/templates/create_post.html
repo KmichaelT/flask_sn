@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container w-25 card  position-absolute top-50 start-50 translate-middle p-5" >
+    <h4 class="card-title pb-3">Whats in your mind?</h4>
+<form method="post">
+
+{{ form.hidden_tag()}}
+{{form.title (class="form-control" )}} <br>
+{{form.text (class="form-control" )}}<br>
+{{form.submit (class="btn btn-primary w-100" )}}
+
+</form>
+</div>
+
+
+{%endblock%}

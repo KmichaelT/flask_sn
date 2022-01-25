@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<div style="min-width: 500px;" class="container w-25 mt-5">
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <img src="{{url_for('static',filename='profile_pics/'+user_id.profile_img)}}" style="width: 45px;" class="rounded-circle img-fluid" alt="...">
+        {{user.username}}
+      </div>
+               
+               {% for post in post.item  %}
+               <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.text}}</p>
+          <p class="card-text"><small class="text-muted">{{post.date.strftime("%Y-%m-%d")}}</small></p>
+        </div>
+        {% endfor  %}
+      </div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container w-25 card  position-absolute top-50 start-50 translate-middle p-5">
+    <h4 class="card-title pb-3">Register</h4>
+<form method="post">
+
+{{ form.hidden_tag()}}
+{{form.email (class="form-control" )}} <br>
+{{form.username (class="form-control" )}}<br>
+{{form.password (class="form-control" )}}<br>
+{{form.conf_password (class="form-control" )}}<br>
+{{form.submit (class="btn btn-primary w-100" )}}
+
+</form>
+</div>
+
+
+{%endblock%}
